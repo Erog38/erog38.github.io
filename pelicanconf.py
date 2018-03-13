@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Phil Gore'
-SITENAME = u'https://erog38.github.io'
-SITEURL = ''
+SITENAME = 'Senior Blog'
+SITEURL = 'https://erog38.github.io'
 
 PATH = 'content'
 
@@ -22,12 +22,9 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+         ('Vim Cheatsheet', 'https://vim.rtorr.com/'),
+         ('Oh My Zsh', 'http://ohmyz.sh/'),
+         ('Powerline','https://github.com/powerline/powerline'),)
 
 DEFAULT_PAGINATION = 10
 
