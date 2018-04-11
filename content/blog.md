@@ -1,6 +1,6 @@
 Title: Containerization and Seperation, Part One.
-Date: Wed Apr 11 13:44:21 DST 2018
-Modified: Wed Apr 11 13:44:21 DST 2018
+Date: 2018-04-11 16:16
+Modified: 2018-04-11 16:16
 Category: Tutorials
 Tags: first, misc
 Authors: Phil Gore
@@ -15,6 +15,7 @@ staging and/or production environments!
 There are many ways to building an environment for getting set up with
 containers. This is the flow I use because I enjoy having control over my
 systems. 
+
 
 ## Setting up a Google Cloud Virtual Machine
 
@@ -42,4 +43,6 @@ straightforward, so I recommend checking out
 [this guide](https://cloud.google.com/compute/docs/quickstart-linux)
 to build a Debian instance. 
 
-
+You'll want an instance with at least two cores, and 4 GB of RAM, you won't 
+need much storage space unless you intend to use this for several git repositories.
+and as a build tool.
