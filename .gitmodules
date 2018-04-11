@@ -1,4 +1,0 @@
-[submodule "output"]
-	path = output
-	url = git@github.com:Erog38/erog38.github.io.git
-	branch = master
