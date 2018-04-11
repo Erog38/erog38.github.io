@@ -1,10 +1,45 @@
-Title: My first post
+Title: Containerization and Seperation, Part One.
 Date: Wed Apr 11 13:44:21 DST 2018
 Modified: Wed Apr 11 13:44:21 DST 2018
-Category: misc
+Category: Tutorials
 Tags: first, misc
 Authors: Phil Gore
-Summary: Containerizing a simple workflow
+Summary: Getting set up with Google Compute Cloud.
 
-This is the *first post* from my Pelican blog.
+
+Welcome to my personal tutorial on building a simple, contrainerized
+staging and/or production environments!
+
+####notice
+
+There are many ways to building an environment for getting set up with
+containers. This is the flow I use because I enjoy having control over my
+systems. 
+
+## Setting up a Google Cloud Virtual Machine
+
+I choose to use Google Compute Cloud because gitlab is an absolute monster, 
+and requires 4 GB of RAM to run properly. As of when writing this article,
+Google gives you a starting credit of $300 in order to get hooked. We need this
+to build a box worth using gitlab on. If you're sneaky and use a larger swapfile 
+or [gzip your ram](https://cloud.google.com/compute/docs/quickstart-linux) you
+can get away with less ram but at a major performance cost.
+
+1. Set up a Google account.
+
+This should go without saying, but you'll need one of these to use the Google
+Compute Cloud. If you'd rather not set up an account, you can tread through
+another provider to build your virtual machine.
+
+2. Build a VM!
+    
+Head on over to 
+[the Google Cloud Platform console ](https://console.cloud.google.com ). 
+and log into the cloud platform with your Google account.
+
+Google's documentation on how to get started with the compute cloud is fairly
+straightforward, so I recommend checking out 
+[this guide](https://cloud.google.com/compute/docs/quickstart-linux)
+to build a Debian instance. 
+
 
