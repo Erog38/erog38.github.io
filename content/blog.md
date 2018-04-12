@@ -1,9 +1,9 @@
 Title: Containerization and Seperation
 Date: 2018-04-12 12:00
-Category: Personal Docs
-Tags: first, tutorial, devops
+Category: DevOps
+Tags: first, tutorial, devops, gitlab
 Authors: Phil Gore
-Summary: Getting set up with Google Compute Cloud.
+Summary: Building a simple staging environment
 
 In the past couple years, I've been getting more into three philosophies 
 that have improved my code quality, performance, and sustainability.
@@ -17,7 +17,7 @@ As someone with a background in Linux adminstration, as well as infrastructure
 automation, these three ideaologies have shaped the way that I develop software.
 Building systems on these ideologies has brought me to the environment I use
 today. In my development, I use a combination of 
-[Google Compute Engine]("https://cloud.google.com/compute/docs/"),
+[Google Compute Engine](https://cloud.google.com/compute/docs/),
 [Docker](https://www.docker.com/what-docker),
 [Gitlab-CE](https://gitlab.com/Gitlab-org/Gitlab-ce),
 and [nginx](https://www.nginx.com/).
@@ -44,7 +44,8 @@ create a proxy for that subdomain. Since I use the letsencrypt-nginx-proxy
 container, I also set the `LETSENCRYPT_EMAIL` and `LETSENCRYPT_HOST` variables,
 allowing the container to generate certs as needed. Thanks to this container as
 well, the certs are automatically renewed as necessary in order to keep them
-fresh.
+fresh. You can find my docker-compose file
+[here](https://docs.gitlab.com/runner/).
 
 Once I have the nginx-proxy configured, I setup a Gitlab-CE instance from a
 container. To do this and keep git repositories on restart, I set the container
@@ -60,14 +61,25 @@ this is done be adding lines to the `volumes` directive like so:
 
 My Gitlab-CE docker configuration is found
 [here](https://github.com/Erog38/simple-container-scipts/blob/master/Gitlab/docker-compose.yml).
+
 Once Gitlab is set up, I had to use the browser to finish initialization, giving
 Gitlab an email and first user for use. While most of those putting together a
 Gitlab instance will use their own mailserver, I  simply used Gmail and gave it
 an address this way, allowing it to let me know if a build fails later on.
 
 Now that I have a reverse proxy, and somewhere to store my source code, I set up
-another, smaller, Debian VM with docker and docker-compose installed.
+another, smaller, Debian VM with docker and docker-compose installed. I'll call
+this the "slave" and the first VM, "master". 
 Configuring this one the same as my source control VM with a reverse proxy and
 letsencrypt. I set forth to also install a [Gitlab
 Runner](https://docs.gitlab.com/runner/). Once connected, runners communicate
-with the main Gitlab instance to run continuous integration on a seperate box. 
+with the main Gitlab instance to run continuous integration on a seperate box.
+There are several different ways to use a runner, while many would
+recommend using a runner configures with docker in this instance, I haven't
+attempted building one because of my personal background with Linux, I am much
+more familiar with a simple shell environment. In the future, I am hoping to add
+a runner which cooks docker instances for me, all self contained, but for now
+this is what I am able to work with. 
+
+With a runner running on the slave machine, I can now deploy containers to
+that machine and have them accessible from the outside world. 
