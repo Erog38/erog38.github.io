@@ -1,93 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <title>Senior Blog</title>
-        <link rel="stylesheet" href="http://blog.philgore.net/theme/css/main.css" />
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+
+  <title>Senior Blog</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://blog.philgore.net/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="https://blog.philgore.net/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://blog.philgore.net/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Senior Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Senior Blog"/>
+<meta property="og:description" content="View the blog."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://blog.philgore.net/"/>
+<meta property="og:image" content="https://blog.philgore.net/theme/images/home-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Website",
+  "name": " Senior Blog ",
+  "url" : "https://blog.philgore.net/",
+  "image": "https://blog.philgore.net/theme/images/home-bg.jpg",
+  "description": "View the blog."
+}
+</script>
 </head>
+<!-- TODO : Body class -->
+<body class="home-template">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://blog.philgore.net/">Senior Blog </a></h1>
-                <nav><ul>
-                    <li><a href="http://blog.philgore.net/category/tutorials.html">Tutorials</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://blog.philgore.net/containerization-and-seperation-part-one.html">Containerization and Seperation, Part One.</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2018-04-11T16:16:00-06:00">
-                Published: Wed 11 April 2018
-        </abbr>
-		<br />
-        <abbr class="modified" title="2018-04-11T16:16:00-06:00">
-                Updated: Wed 11 April 2018
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://blog.philgore.net/author/phil-gore.html">Phil Gore</a>
-        </address>
-<p>In <a href="http://blog.philgore.net/category/tutorials.html">Tutorials</a>.</p>
-<p>tags: <a href="http://blog.philgore.net/tag/first.html">first</a> <a href="http://blog.philgore.net/tag/misc.html">misc</a> </p>
-</footer><!-- /.post-info --><p>Welcome to my personal tutorial on building a simple, contrainerized
-staging and/or production environments!</p>
-<h4>notice</h4>
-<p>There are many ways to building an environment for getting set up with
-containers. This is the flow I use because I enjoy having control over my
-systems. </p>
-<h2>Setting up a Google Cloud Virtual Machine</h2>
-<p>I choose to use Google Compute Cloud because gitlab is an absolute monster, 
-and requires 4 GB of RAM to run properly. As of when writing this article,
-Google gives you a starting credit of $300 in order to get hooked. We need this
-to build a box worth using gitlab on. If you're sneaky and use a larger swapfile 
-or <a href="https://cloud.google.com/compute/docs/quickstart-linux">gzip your ram</a> you
-can get away with less ram but at a major performance cost.</p>
-<ol>
-<li>Set up a Google account.</li>
-</ol>
-<p>This should go without saying, but you'll need one of these to use the Google
-Compute Cloud. If you'd rather not set up an account, you can tread through
-another provider to build your virtual machine.</p>
-<ol>
-<li>Build a VM!</li>
-</ol>
-<p>Head on over to 
-<a href="https://console.cloud.google.com">the Google Cloud Platform console </a>. 
-and log into the cloud platform with your Google account.</p>
-<p>Google's documentation on how to get started with the compute cloud is fairly
-straightforward, so I recommend checking out 
-<a href="https://cloud.google.com/compute/docs/quickstart-linux">this guide</a>
-to build a Debian instance. </p>
-<p>You'll want an instance with at least two cores, and 4 GB of RAM, you won't 
-need much storage space unless you intend to use this for several git repositories.
-and as a build tool.</p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="https://vim.rtorr.com/">Vim Cheatsheet</a></li>
-                            <li><a href="http://ohmyz.sh/">Oh My Zsh</a></li>
-                            <li><a href="https://github.com/powerline/powerline">Powerline</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-        </section><!-- /#extras -->
+    </ul>
+  </div>
+</nav>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="blog-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="blog-name"><a href="https://blog.philgore.net/">Senior Blog</a></h1>
+            <div class="blog-cover cover" style="background-image: url('https://blog.philgore.net/theme/images/home-bg.jpg')">
+        
+      </div>
+    </header>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+<div id="index" class="container">
+  <main class="content" role="main">
+    <div class="extra-pagination">
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+    </div>
+
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="https://blog.philgore.net/containerization-and-seperation-part-one.html" rel="bookmark" title="Permalink to Containerization and Seperation, Part One.">Containerization and Seperation, Part One.</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://blog.philgore.net/author/phil-gore.html">Phil Gore</a>
+                     | <time datetime="Wed 11 April 2018">Wed 11 April 2018</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        Getting set up with Google Compute Cloud.
+                    </p>
+                </section>
+            </div>
+        </article>
+
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+  </main>
+</div>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="https://blog.philgore.net/theme/js/script.js"></script>
 
 </body>
 </html>
