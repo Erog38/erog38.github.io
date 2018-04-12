@@ -38,13 +38,14 @@
 
     <link href="https://blog.philgore.net/containerization-and-seperation.html" rel="canonical" />
 
-        <meta name="description" content="Getting set up with Google Compute Cloud.">
+        <meta name="description" content="Building a simple staging environment">
 
         <meta name="author" content="Phil Gore">
 
         <meta name="tags" content="first">
         <meta name="tags" content="tutorial">
         <meta name="tags" content="devops">
+        <meta name="tags" content="gitlab">
 
 
 
@@ -52,17 +53,18 @@
 <!-- Open Graph -->
 <meta property="og:site_name" content="Senior Blog"/>
 <meta property="og:title" content="Containerization and Seperation"/>
-<meta property="og:description" content="Getting set up with Google Compute Cloud."/>
+<meta property="og:description" content="Building a simple staging environment"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://blog.philgore.net/containerization-and-seperation.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2018-04-12 12:00:00-06:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="https://blog.philgore.net/author/phil-gore.html">
-<meta property="article:section" content="Personal Docs"/>
+<meta property="article:section" content="DevOps"/>
 <meta property="article:tag" content="first"/>
 <meta property="article:tag" content="tutorial"/>
 <meta property="article:tag" content="devops"/>
+<meta property="article:tag" content="gitlab"/>
 <meta property="og:image" content="https://blog.philgore.net/theme/images/post-bg.jpg">
 
 <!-- Twitter Card -->
@@ -82,7 +84,7 @@
   },
   "image": "https://blog.philgore.net/theme/images/post-bg.jpg",
   "url": "https://blog.philgore.net/containerization-and-seperation.html",
-  "description": "Getting set up with Google Compute Cloud."
+  "description": "Building a simple staging environment"
 }
 </script>
 </head>
@@ -146,7 +148,7 @@ that have improved my code quality, performance, and sustainability.</p>
 automation, these three ideaologies have shaped the way that I develop software.
 Building systems on these ideologies has brought me to the environment I use
 today. In my development, I use a combination of 
-<a href="" title="https://cloud.google.com/compute/docs/">Google Compute Engine</a>,
+<a href="https://cloud.google.com/compute/docs/">Google Compute Engine</a>,
 <a href="https://www.docker.com/what-docker">Docker</a>,
 <a href="https://gitlab.com/Gitlab-org/Gitlab-ce">Gitlab-CE</a>,
 and <a href="https://www.nginx.com/">nginx</a>.</p>
@@ -171,7 +173,8 @@ create a proxy for that subdomain. Since I use the letsencrypt-nginx-proxy
 container, I also set the <code>LETSENCRYPT_EMAIL</code> and <code>LETSENCRYPT_HOST</code> variables,
 allowing the container to generate certs as needed. Thanks to this container as
 well, the certs are automatically renewed as necessary in order to keep them
-fresh.</p>
+fresh. You can find my docker-compose file
+<a href="https://docs.gitlab.com/runner/">here</a>.</p>
 <p>Once I have the nginx-proxy configured, I setup a Gitlab-CE instance from a
 container. To do this and keep git repositories on restart, I set the container
 to use mount points from the host in order to save the data. In docker-compose,
@@ -184,17 +187,26 @@ this is done be adding lines to the <code>volumes</code> directive like so:</p>
 
 
 <p>My Gitlab-CE docker configuration is found
-<a href="https://github.com/Erog38/simple-container-scipts/blob/master/Gitlab/docker-compose.yml">here</a>.
-Once Gitlab is set up, I had to use the browser to finish initialization, giving
+<a href="https://github.com/Erog38/simple-container-scipts/blob/master/Gitlab/docker-compose.yml">here</a>.</p>
+<p>Once Gitlab is set up, I had to use the browser to finish initialization, giving
 Gitlab an email and first user for use. While most of those putting together a
 Gitlab instance will use their own mailserver, I  simply used Gmail and gave it
 an address this way, allowing it to let me know if a build fails later on.</p>
 <p>Now that I have a reverse proxy, and somewhere to store my source code, I set up
-another, smaller, Debian VM with docker and docker-compose installed.
+another, smaller, Debian VM with docker and docker-compose installed. I'll call
+this the "slave" and the first VM, "master". 
 Configuring this one the same as my source control VM with a reverse proxy and
 letsencrypt. I set forth to also install a <a href="https://docs.gitlab.com/runner/">Gitlab
 Runner</a>. Once connected, runners communicate
-with the main Gitlab instance to run continuous integration on a seperate box. </p>
+with the main Gitlab instance to run continuous integration on a seperate box.
+There are several different ways to use a runner, while many would
+recommend using a runner configures with docker in this instance, I haven't
+attempted building one because of my personal background with Linux, I am much
+more familiar with a simple shell environment. In the future, I am hoping to add
+a runner which cooks docker instances for me, all self contained, but for now
+this is what I am able to work with. </p>
+<p>With a runner running on the slave machine, I can now deploy containers to
+that machine and have them accessible from the outside world. </p>
             </section>
 
             <section class="post-info">
@@ -212,7 +224,7 @@ with the main Gitlab instance to run continuous integration on a seperate box. <
                 </div>
 
                 <aside class="post-tags">
-<a href="https://blog.philgore.net/tag/first.html">first</a><a href="https://blog.philgore.net/tag/tutorial.html">tutorial</a><a href="https://blog.philgore.net/tag/devops.html">devops</a>                </aside>
+<a href="https://blog.philgore.net/tag/first.html">first</a><a href="https://blog.philgore.net/tag/tutorial.html">tutorial</a><a href="https://blog.philgore.net/tag/devops.html">devops</a><a href="https://blog.philgore.net/tag/gitlab.html">gitlab</a>                </aside>
 
                 <div class="clear"></div>
 
