@@ -2,15 +2,16 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Phil Gore'
+AUTHOR = 'Phil Gore'
 SITENAME = 'Senior Blog'
-SITEURL = 'https://erog38.github.io'
+SITEURL = 'https://blog.philgore.net'
 
 PATH = 'content'
 
 TIMEZONE = 'America/Boise'
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'en'
+THEME='attila-1.2'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
