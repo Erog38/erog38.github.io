@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+    <body>
+        <h1>
+            Stream Graph
+        </h1>
+        <p> 
+        This is an incredibly useless stream graph showing the frequencies of words
+        in the words.txt tsv. 
+        </p>
+        <script>
+    var margin = {top: 20, right: 30, bottom: 40, left: 30}
+    var width = 960 - margin.left - margin.right
+    var height = 500 - margin.top - margin.bottom;
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var container = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var now = Date.now()
+
+
+
+d3.tsv("words.txt",d => ({"word":d.word,"frequency":+d.frequency})).then(datum => {
+    var then = Date.now()
+
+    var m = Object.values(datum).filter(d=>d.frequency)
+        .sort((a,b)=> b.frequency - a.frequency)
+        .splice(10,11)
+        .reduce((orig,d) => ({...orig, [d.word]:d.frequency}),{});
+
+
+    var data = new Array();
+    data[0] = Object.keys(m).reduce((orig,k) => ({...orig, [k]:0}),{});
+    data[1] = m;
+    console.log(data);
+   
+    var stackData = d3.stack()
+        .keys(Object.keys(data[0]))
+        .offset(d3.stackOffsetSilhouette)(data)
+       
+        console.log(stackData)
+    var y = d3.scaleLinear()
+        .domain([d3.min(stackData, stack=>d3.min(stack,d=>d[0])), d3.max(stackData,stack => d3.max(stack,d => d[1]))])
+        .range([height-margin.bottom,margin.top]);
+
+
+    var x = d3.scaleLinear()
+        .domain([0,1])
+        .range([0,width])
+
+    var z = d3.interpolateCool;
+    
+    var area = d3.area()
+        .x(function(d, i) { return x(i); })
+        .y0(function(d) { return y(d[0]); })
+        .y1(function(d) { return y(d[1]); });
+
+    container.selectAll("g")
+        .data(stackData).enter()
+        .append("path")
+        .attr("d", area) 
+        .attr("class",d => d.key)
+        .attr("fill", function() { return z(Math.random()); });
+    
+    xAxis = g => g
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x))
+    .call(g => g.append("text")
+        .attr("x", width/2)
+        .attr("y", margin.bottom-4)
+        .attr("fill", "#000")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "middle")
+        .text("Fake Time Data"))
+
+    container.append("g").call( g => {
+        g.call(xAxis);
+        g.attr("transform", "translate(0," + height + ")");
+    });
+
+
+        });
+        </script>
+    </body>
+</html>
+

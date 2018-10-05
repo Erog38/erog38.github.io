@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.land {
+  fill: #fff;
+  stroke: #ccc;
+}
+
+.state {
+  fill: #ccc;
+  stroke: #666;
+}
+
+</style>
+<body>
+<script src="//d3js.org/d3.v5.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script>
+
+
+var valueById = [];
+
+//data pulled and married from 
+//http://worldpopulationreview.com/states/
+//and 
+//https://www.census.gov/geo/reference/ansi_statetables.html
+
+d3.csv("2018Population.csv",d => {
+    valueById[d.id] = +d.percentPopulation
+}).then(function(data) {
+
+console.log(valueById)
+
+var path = d3.geoPath()
+    .projection(d3.geoAlbersUsa());
+
+var nsvg = d3.select("body").append("svg")
+    .attr("width", 960)
+    .attr("height", 500);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", 960)
+    .attr("height", 500);
+
+
+    d3.json("us.json").then(function(us) {
+
+  nsvg.append("path")
+      .datum(topojson.feature(us, us.objects.land))
+      .attr("class", "land")
+      .attr("d", path);
+
+  nsvg.selectAll(".state")
+      .data(topojson.feature(us, us.objects.states).features)
+    .enter().append("path")
+      .attr("class", "state")
+      .attr("d", path)
+  
+  svg.append("path")
+      .datum(topojson.feature(us, us.objects.land))
+      .attr("class", "land")
+      .attr("d", path);
+
+  svg.selectAll(".state")
+      .data(topojson.feature(us, us.objects.states).features)
+      .enter()
+      .filter(d => d.id <= 56)
+      .append("path")
+      .attr("class", "state")
+      .attr("d", path)
+      .attr("transform", function(d) {
+        var centroid = path.centroid(d),
+            x = centroid[0],
+            y = centroid[1];
+            console.log(centroid);
+            console.log(d);
+        return "translate(" + x + "," + y + ")"
+            + "scale(" + Math.sqrt(valueById[d.id] * 10) + ")"
+            + "translate(" + -x + "," + -y + ")";
+      })
+      .style("stroke-width", function(d) {
+        return 1 / Math.sqrt(valueById[d.id] * 5 || 1);
+      });
+});
+});
+
+
+</script>
+<h1>
+            US Census Data
+        </h1>
+        <p>
+            These are two maps with the first one in it's original format, 
+            and the second one resized according to their percentage 
+            of the US population.
+        </p>
+
+</body>
+</html>

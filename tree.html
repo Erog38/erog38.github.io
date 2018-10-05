@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+    <body>
+        <h1>
+            Tree
+        </h1>
+        <p> 
+        This is a simple d3 tree of static, embeded data.
+        </p>
+        <script>
+            var hierarchy = {"name":"Alpha",
+                "children":[
+                    {
+                        "name": "Beta",
+                        "children": [
+                            {
+                                "name": "Delta",
+                                "children": [
+                                    {
+                                        "name": "Hotel"
+                                    },
+                                    {
+                                        "name": "Indigo"
+                                    },
+                                    {
+                                        "name": "Juliet"
+                                    },
+                                    {
+                                        "name": "Kilo"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Echo"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Foxtrot",
+                        "children": [
+                            {
+                                "name": "Golf"
+                            },
+                            {
+                                "name": "Charlie",
+                                "children": [
+                                    {
+                                        "name": "Lima"
+                                    },
+                                    {
+                                        "name": "Mike"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]};
+var root = d3.hierarchy(hierarchy);
+var margin = {top: 20, right: 30, bottom: 40, left: 30}
+var width = 960 - margin.left - margin.right
+var height = 500 - margin.top - margin.bottom;
+
+var treeLayout = d3.tree()
+    .size([
+        width-margin.left-margin.right,
+        height-margin.top-margin.bottom
+    ]);
+treeLayout(root);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom);
+var container = svg.append("g")
+    .attr("transform","translate(" + margin.left + "," + margin.top + ")");
+var nodes = container.append("g");
+var links = container.append("g");
+
+// Nodes
+nodes.selectAll('circle.node')
+    .data(root.descendants())
+    .enter()
+    .append('circle')
+    .attr('cx', d => d.x)
+    .attr('cy', d => d.y)
+    .attr('r', 4);
+
+// Links
+links.selectAll('line.link')
+    .data(root.links())
+    .enter()
+    .append('line')
+    .style("fill","none")
+    .style("stroke","#000")
+    .style("stroke-width","1px")
+    .attr('x1', d => d.source.x)
+    .attr('y1', d => d.source.y)
+    .attr('x2', d => d.target.x)
+    .attr('y2', d => d.target.y);
+        </script>
+    </body>
+</html>
+

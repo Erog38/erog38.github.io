@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+    <body>
+        <h1>
+            Hello World
+        </h1>
+        <p> 
+        This is the simplest Hello World for D3.
+        </p>
+        <script>
+    var margin = {top: 20, right: 20, bottom: 30, left: 20},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var data = d3.tsv("words.txt").then(function(data){
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var freqData = data.map(d => +d.frequency);
+    var x = d3.scaleLinear()
+        .domain(d3.extent(freqData)).nice()
+        .range([margin.left, width-margin.right]);
+
+    var bins = d3.histogram().thresholds(x.ticks(40))(freqData); 
+    console.log(bins);
+
+    var y = d3.scaleLinear()
+    .domain([0, d3.max(bins, d => d.length)]).nice()
+    .range([height - margin.bottom, margin.top])
+
+    var yAxis = g => g
+        .attr("transform", `translate(${margin.left},${margin.bottom})`)
+    .call(d3.axisLeft(y))
+    .call(g => g.select(".domain").remove())
+    .call(g => g.select(".tick:last-of-type text").clone()
+        .attr("x", 4)
+        .attr("text-anchor", "start")
+        .attr("font-weight", "bold")
+        .text("No. of Words"))
+
+    var xAxis = g => g
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x).tickSizeOuter(0))
+    .call(g => g.append("text")
+        .attr("x", width - margin.right)
+        .attr("y", -4)
+        .attr("fill", "#000")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "end")
+        .text("Frequency"))
+    
+    const bar = g.attr("fill", "green")
+        .selectAll("rect")
+        .data(bins).enter()
+        .append("rect")
+        .attr("x", d => x(d.x0))
+        .attr("width", d => Math.max(0, x(d.x1) - x(d.x0) - 1))
+        .attr("y", d => y(d.length)+margin.bottom)
+        .attr("height", d => y(0) - y(d.length));
+
+    g.append("g").call(function(g){
+        g.call(yAxis);
+    });
+    g.append("g").call(function(g){
+        g.call(xAxis);
+        g.attr("transform", "translate(0," + height + ")");
+    });
+
+
+        });
+        </script>
+    </body>
+</html>
+

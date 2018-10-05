@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+    <body>
+        <h1>
+            Bar Chart
+        </h1>
+        <p> 
+        This is a simple bar chart showing how many times select words 
+        showed up in a random text.
+        </p>
+        <script>
+    var margin = {top: 20, right: 30, bottom: 40, left: 30},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("words.txt").then(function(dat){
+    
+    var data = dat.splice(11,12);
+    data.shift()
+    console.log(data);
+    var y = d3.scaleLinear()
+        .domain([0, d3.max(data.map(d => +d.frequency))]).nice()
+        .range([height-margin.bottom,margin.top]);
+    var x = d3.scaleBand()
+        .domain(data.map(d => d.word))
+        .range([0+margin.left,width])
+        .padding(0.1);
+
+    console.log(y);
+
+    const bar = g.attr("fill", "green")
+        .selectAll("rect")
+        .data(data).enter()
+        .append("rect")
+        .attr("x", d => x(d.word))
+        .attr("width", x.bandwidth())
+        .attr("y", d => y(+d.frequency)+margin.bottom)
+        .attr("height", d => y(0) - y(+d.frequency))
+        
+    const label = g.selectAll("text").data(data).enter()
+        .append("text").text(d => d.word)
+        .attr("x", d => x(d.word) + x.bandwidth()/2)
+        .attr("y",  height+15)
+        .attr("text-anchor", "left")
+        .attr("text-anchor", "middle")
+        .style("fill", "black");
+    
+    var yAxis = g => g
+        .attr("transform", `translate(${margin.left},${margin.bottom})`)
+    .call(d3.axisLeft(y))
+    .call(g => g.select(".domain").remove())
+    .call(g => g.select(".tick:last-of-type text").clone()
+        .attr("x", 4)
+        .attr("text-anchor", "start")
+        .attr("font-weight", "bold")
+        .text("Occurances"))
+
+    xAxis = g => g
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(g => g.append("text")
+        .attr("x", width/2)
+        .attr("y", margin.bottom-4)
+        .attr("fill", "#000")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "middle")
+        .text("Word"))
+
+    g.append("g").call(function(g){
+        g.call(yAxis);
+    });
+    g.append("g").call(function(g){
+        g.call(xAxis);
+        g.attr("transform", "translate(0," + height + ")");
+    });
+
+
+        });
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+<!-- tooltip section from http://bl.ocks.org/d3noob/a22c42db65eb00d4e369 -->  
+<style>
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 85px;
+    height: 14px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.innerbox {
+    padding:5;
+}
+</style>
+    </head>
+    <body>
+        <h1>
+            Tree Map
+        </h1>
+        <p> 
+        This is a simple d3 tree map of a directory listing.
+        </p>
+        <script>
+
+            
+var margin = {top: 20, right: 30, bottom: 40, left: 30}
+var width = 960 - margin.left - margin.right
+var height = 500 - margin.top - margin.bottom;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom);
+var container = svg.append("g")
+    .attr("transform","translate("+[margin.left,margin.top]+")");
+var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+var treeMapLayout = d3.treemap()
+    .size([
+        width,
+        height
+    ]).paddingInner(3)
+    .round(true)
+    .paddingTop(margin.top);
+
+d3.json("treedir.json").then(data => {
+
+    var root = d3.hierarchy(data)
+    .sort(function(a, b) { return b.height - a.height || b.value - a.value; });;
+
+    root.sum(d=>d.value); 
+    treeMapLayout(root);
+
+    console.log(root.descendants())
+
+    var nodes = container
+        .selectAll("g")
+        .data(root.descendants())
+        .enter()
+        .filter(d => (d.data.children && d.data.children.length > 0) || d.data.value > 0)
+        .append("g")
+        .attr("transform", d => "translate(" + [d.x0, d.y0] + ")")
+    nodes.filter(d => d.data.value == 1)
+        .style("opacity", 0.5)
+
+    nodes.append("rect")
+        .attr("width", d => d.x1 - d.x0)
+        .attr("height", d => d.y1 - d.y0)
+        .attr("fill", d => d.data.value == 1 ? "steelblue":"lightsteelblue")
+        .attr("stroke", "black")
+        .on("mouseover",d => {
+         div.transition()
+            .duration(10);
+         div.html(""+d.data.name)
+            .style("left", (d3.event.pageX) + "px")
+            .style("opacity",1)
+                .style("top", (d3.event.pageY - 28) + "px");
+            })
+        .on("mouseout", d => {
+            div.transition()
+                .duration(500)
+                .style("opacity", 0);
+        });
+    nodes.append("clipPath")
+      .attr("id", function(d) { return "clip-" + d.data.name; })
+    .append("rect")
+       .attr("width", d => d.x1 - d.x0)
+       .attr("height", margin.top);
+
+    nodes.append("text")
+        .attr("y",margin.top*3/4)
+        .attr("x",5)
+        .style("width",d=>(d.x1-d.x0))
+        .style("word-wrap", "break-word")
+        .attr("clip-path", function(d) { return "url(#clip-" + d.data.name + ")"; })
+        .text(d=>d.data.name);
+
+    container.append("text")
+        .attr("y",margin.top*3/4)
+        .sty
+        
+
+})
+
+        </script>
+    </body>
+</html>
+

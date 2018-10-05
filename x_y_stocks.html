@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+    <body>
+        <h1>
+            X Y Plot
+        </h1>
+        <p> 
+            This is an (x,y) plot to show stocks over a period of time.
+        </p>
+        <script>
+    var margin = {top: 20, right: 30, bottom: 40, left: 30}
+    var width = 960 - margin.left - margin.right
+    var height = 500 - margin.top - margin.bottom;
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var data = d3.csv("stocktable.csv").then(data => {
+    console.log(data);
+    var y = d3.scaleLinear()
+        .domain([0, d3.max(data.map(d => +d["Close"]))]).nice()
+        .range([height-margin.bottom,margin.top]);
+    var x = d3.scaleTime()
+        .domain([Date.parse(data[data.length-1]["Date"]),Date.parse(data[0]["Date"])])
+        .range([0+margin.left,width])
+
+    g.attr("fill", "blue")
+        .selectAll("dots")
+        .data(data).enter()
+        .append("svg:circle")
+        .attr("cx", d => x(Date.parse(d["Date"])))
+        .attr("cy", d => y(+d["Close"])+margin.bottom)
+        .attr("r", 1);
+    
+    g.attr("fill", "blue")
+        .selectAll("line")
+        .data(data).enter()
+        .append("line")
+        .attr("x1", d => x(Date.parse(d["Date"])))
+        .attr("cy", d => y(+d["Close"])+margin.bottom)
+        .attr("r", 1);
+
+
+    var yAxis = g => g
+        .attr("transform", `translate(${margin.left},${margin.bottom})`)
+    .call(d3.axisLeft(y))
+    .call(g => g.select(".domain").remove())
+    .call(g => g.select(".tick:last-of-type text").clone()
+        .attr("x", 4)
+        .attr("text-anchor", "start")
+        .attr("font-weight", "bold")
+        .text("Closing Amount"))
+
+    xAxis = g => g
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x))
+    .call(g => g.append("text")
+        .attr("x", width/2)
+        .attr("y", margin.bottom-4)
+        .attr("fill", "#000")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "middle")
+        .text("Date"))
+
+    g.append("g").call( g => g.call(yAxis));
+    g.append("g").call( g => {
+        g.call(xAxis);
+        g.attr("transform", "translate(0," + height + ")");
+    });
+
+
+        });
+        </script>
+    </body>
+</html>
+
