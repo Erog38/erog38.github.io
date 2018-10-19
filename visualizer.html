@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+<style>
+
+.link {
+    fill: none;
+    stroke: #555;
+    stroke-opacity: 0.4;
+    stroke-width: 0.5px;
+}
+
+.loading {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+svg {
+    border: 1px solid black;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* shamelessly stolen from https://www.w3schools.com/howto/howto_css_switch.asp */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 5px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+</style>
+<body>
+    <h1>
+        Visualizer and Track Selection
+    </h1>
+    <div id="track_info"> 
+        <table>
+            <tr>
+                <td>Track:</td>
+                <td id="track_name"></td>
+            </tr>
+            <tr>
+                <td>Artist:</td>
+                <td id="artist_name"></td>
+            </tr>
+        </table>
+    </div>
+    <svg id="freq">
+    </svg>
+    <div class="row">
+        <audio id="audio" controls crossorigin="anonymous"></audio>
+        <label id="track_selection">Toggle Track Selection</label>
+        <label class="switch">
+            <input type="checkbox" onclick="toggleTrackSelection()" checked>
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <svg id="radial">
+    </svg>
+    <img id="loading" src="/loading.gif" class="loading" hidden></img>
+    <script src="/visualizer.js"></script>
+    <script src="/radialSelection.js"></script>
+</body>
+</html>
+

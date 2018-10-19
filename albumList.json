@@ -1,0 +1,714 @@
+{
+    "name":"Free Music Archive",
+    "children":[
+        {
+            "album_id": "3878",
+            "artist_name": "Mr. Spastic",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/Mr_Spastic_-_Claps_and_Leads_-_2009113013222140.jpg",
+            "name": "Claps and Leads",
+            "children": [
+                {
+                    "name": "Transpose",
+                    "track_url": "http://freemusicarchive.org/music/Mr_Spastic/Claps_and_Leads/Transpose",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Mr_Spastic_-_03_-_Transpose_-_2009113045831414.jpg",
+                    "artist_name": "Mr. Spastic",
+                    "album_id": "3878"
+                }
+            ]
+        },
+        {
+            "album_id": "6316",
+            "artist_name": "Binärpilot",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/Binrpilot_-_Defrag_-_20100506150402129.jpg",
+            "name": "Defrag",
+            "children": [
+                {
+                    "name": "Goof",
+                    "track_url": "http://freemusicarchive.org/music/Binrpilot/Defrag/01_-_Goof",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Binrpilot_-_Defrag_-_20100506150402129.jpg",
+                    "artist_name": "Binärpilot",
+                    "album_id": "6316"
+                },
+                {
+                    "name": "Sandjorda",
+                    "track_url": "http://freemusicarchive.org/music/Binrpilot/Defrag/02_-_Sandjorda",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Binrpilot_-_Defrag_-_20100506150402129.jpg",
+                    "artist_name": "Binärpilot",
+                    "album_id": "6316"
+                },
+                {
+                    "name": "Widibf",
+                    "track_url": "http://freemusicarchive.org/music/Binrpilot/Defrag/03_-_Widibf",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Binrpilot_-_Defrag_-_20100506150402129.jpg",
+                    "artist_name": "Binärpilot",
+                    "album_id": "6316"
+                },
+                {
+                    "name": "Fuayfsilfm",
+                    "track_url": "http://freemusicarchive.org/music/Binrpilot/Defrag/04_-_Fuayfsilfm",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Binrpilot_-_Defrag_-_20100506150402129.jpg",
+                    "artist_name": "Binärpilot",
+                    "album_id": "6316"
+                }
+            ]
+        },
+        {
+            "album_id": "5417",
+            "artist_name": "David Sugar",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/David_Sugar_-_Fresh_Off_The_Chip_-_20100203195330776.jpg",
+            "name": "Fresh Off The Chip",
+            "children": [
+                {
+                    "name": "Boss Man",
+                    "track_url": "http://freemusicarchive.org/music/David_Sugar/Fresh_Off_The_Chip/04_Boss_Man",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/David_Sugar_-_Fresh_Off_The_Chip_-_20100203195330776.jpg",
+                    "artist_name": "David Sugar",
+                    "album_id": "5417"
+                }
+            ]
+        },
+        {
+            "album_id": "6865",
+            "artist_name": "Lo-Bat",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/Lo-Bat_-_Game_Boy_-_20100725123510920.gif",
+            "name": "Game Boy",
+            "children": [
+                {
+                    "name": "Twinkle",
+                    "track_url": "http://freemusicarchive.org/music/Lo-Bat/Game_Boy/8bp042-02-lo-bat-twinkle",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Lo-Bat_-_Game_Boy_-_20100725123510920.gif",
+                    "artist_name": "Lo-Bat",
+                    "album_id": "6865"
+                },
+                {
+                    "name": "White Russian",
+                    "track_url": "http://freemusicarchive.org/music/Lo-Bat/Game_Boy/8bp042-01-lo-bat-white_russian",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Lo-Bat_-_Game_Boy_-_20100725123510920.gif",
+                    "artist_name": "Lo-Bat",
+                    "album_id": "6865"
+                },
+                {
+                    "name": "Bibibi",
+                    "track_url": "http://freemusicarchive.org/music/Lo-Bat/Game_Boy/8bp042-04-lo-bat-bibibi",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Lo-Bat_-_Game_Boy_-_20100725123510920.gif",
+                    "artist_name": "Lo-Bat",
+                    "album_id": "6865"
+                },
+                {
+                    "name": "Smack The Jackpot",
+                    "track_url": "http://freemusicarchive.org/music/Lo-Bat/Game_Boy/8bp042-03-lo-bat-smack_the_jackpot",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Lo-Bat_-_Game_Boy_-_20100725123510920.gif",
+                    "artist_name": "Lo-Bat",
+                    "album_id": "6865"
+                },
+                {
+                    "name": "Tizzy",
+                    "track_url": "http://freemusicarchive.org/music/Lo-Bat/Game_Boy/8bp042-05-lo-bat-tizzy",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Lo-Bat_-_Game_Boy_-_20100725123510920.gif",
+                    "artist_name": "Lo-Bat",
+                    "album_id": "6865"
+                }
+            ]
+        },
+        {
+            "album_id": "5823",
+            "artist_name": "I, Cactus",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/I_Cactus_-_I_Cactus_-_2010030995659858.gif",
+            "name": "I, Cactus",
+            "children": [
+                {
+                    "name": "ruby cactus",
+                    "track_url": "http://freemusicarchive.org/music/I_Cactus/I_Cactus/8bp033-05-i-cactus-ruby-cactus",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/I_Cactus_-_I_Cactus_-_2010030995659858.gif",
+                    "artist_name": "I, Cactus",
+                    "album_id": "5823"
+                },
+                {
+                    "name": "yellow cactus",
+                    "track_url": "http://freemusicarchive.org/music/I_Cactus/I_Cactus/8bp033-01-i-cactus-yellow-cactus",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/I_Cactus_-_I_Cactus_-_2010030995659858.gif",
+                    "artist_name": "I, Cactus",
+                    "album_id": "5823"
+                },
+                {
+                    "name": "bamboo cactus",
+                    "track_url": "http://freemusicarchive.org/music/I_Cactus/I_Cactus/8bp033-04-i-cactus-bamboo-cactus",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/I_Cactus_-_I_Cactus_-_2010030995659858.gif",
+                    "artist_name": "I, Cactus",
+                    "album_id": "5823"
+                },
+                {
+                    "name": "chartreuse cactus",
+                    "track_url": "http://freemusicarchive.org/music/I_Cactus/I_Cactus/8bp033-02-i-cactus-chartreuse-cactus",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/I_Cactus_-_I_Cactus_-_2010030995659858.gif",
+                    "artist_name": "I, Cactus",
+                    "album_id": "5823"
+                },
+                {
+                    "name": "green cactus",
+                    "track_url": "http://freemusicarchive.org/music/I_Cactus/I_Cactus/8bp033-03-i-cactus-green-cactus",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/I_Cactus_-_I_Cactus_-_2010030995659858.gif",
+                    "artist_name": "I, Cactus",
+                    "album_id": "5823"
+                },
+                {
+                    "name": "silver cactus",
+                    "track_url": "http://freemusicarchive.org/music/I_Cactus/I_Cactus/8bp033-06-i-cactus-silver-cactus",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/I_Cactus_-_I_Cactus_-_2010030995659858.gif",
+                    "artist_name": "I, Cactus",
+                    "album_id": "5823"
+                }
+            ]
+        },
+        {
+            "album_id": "4071",
+            "artist_name": "Supergalactic",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/Supergalactic_-_IAYD_-_2009113013815193.jpg",
+            "name": "IAYD",
+            "children": [
+                {
+                    "name": "Subatomic",
+                    "track_url": "http://freemusicarchive.org/music/IAYD/IAYD/Subatomic",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/IAYD_-_01_-_Subatomic_-_2009113044004766.jpg",
+                    "artist_name": "IAYD",
+                    "album_id": "4071"
+                }
+            ]
+        },
+        {
+            "album_id": "6444",
+            "artist_name": "Trash80",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/Trash80_-_Icarus_-_20100524190245393.gif",
+            "name": "Icarus",
+            "children": [
+                {
+                    "name": "Missing You",
+                    "track_url": "http://freemusicarchive.org/music/Trash80/Icarus/8bp086-03-trash80-missing_you",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Trash80_-_Icarus_-_20100524190245393.gif",
+                    "artist_name": "Trash80",
+                    "album_id": "6444"
+                },
+                {
+                    "name": "Icarus",
+                    "track_url": "http://freemusicarchive.org/music/Trash80/Icarus/8bp086-01-trash80-icarus",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Trash80_-_Icarus_-_20100524190245393.gif",
+                    "artist_name": "Trash80",
+                    "album_id": "6444"
+                },
+                {
+                    "name": "Robot Sneakers",
+                    "track_url": "http://freemusicarchive.org/music/Trash80/Icarus/8bp086-02-trash80-robot_sneakers",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Trash80_-_Icarus_-_20100524190245393.gif",
+                    "artist_name": "Trash80",
+                    "album_id": "6444"
+                },
+                {
+                    "name": "At Teh Disko",
+                    "track_url": "http://freemusicarchive.org/music/Trash80/Icarus/8bp086-04-trash80-at_teh_disko",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Trash80_-_Icarus_-_20100524190245393.gif",
+                    "artist_name": "Trash80",
+                    "album_id": "6444"
+                },
+                {
+                    "name": "Sodium Sonet",
+                    "track_url": "http://freemusicarchive.org/music/Trash80/Icarus/8bp086-05-trash80-sodium_sonet_extended",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Trash80_-_Icarus_-_20100524190245393.gif",
+                    "artist_name": "Trash80",
+                    "album_id": "6444"
+                }
+            ]
+        },
+        {
+            "album_id": "7869",
+            "artist_name": "Bit Shifter",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/bitshifter_-_Information_Chase_-_2010112364108203.gif",
+            "name": "Information Chase",
+            "children": [
+                {
+                    "name": "Reformat The Planet",
+                    "track_url": "http://freemusicarchive.org/music/bit_shifter/Information_Chase/8bp059-05-bit_shifter-reformat_the_planet",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/bitshifter_-_Information_Chase_-_2010112364108203.gif",
+                    "artist_name": "Bit Shifter",
+                    "album_id": "7869"
+                },
+                {
+                    "name": "Activation Theme",
+                    "track_url": "http://freemusicarchive.org/music/bit_shifter/Information_Chase/8bp059-02-bit_shifter-activation_theme",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/bitshifter_-_Information_Chase_-_2010112364108203.gif",
+                    "artist_name": "Bit Shifter",
+                    "album_id": "7869"
+                },
+                {
+                    "name": "Hexadecimal Genome",
+                    "track_url": "http://freemusicarchive.org/music/bit_shifter/Information_Chase/8bp059-03-bit_shifter-hexadecimal_genome",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/bitshifter_-_Information_Chase_-_2010112364108203.gif",
+                    "artist_name": "Bit Shifter",
+                    "album_id": "7869"
+                },
+                {
+                    "name": "Chase Init_",
+                    "track_url": "http://freemusicarchive.org/music/bit_shifter/Information_Chase/8bp059-01-bit_shifter-chase_init",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/bitshifter_-_Information_Chase_-_2010112364108203.gif",
+                    "artist_name": "Bit Shifter",
+                    "album_id": "7869"
+                },
+                {
+                    "name": "The Information Chase",
+                    "track_url": "http://freemusicarchive.org/music/bit_shifter/Information_Chase/8bp059-06-bit_shifter-the_information_chase",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/bitshifter_-_Information_Chase_-_2010112364108203.gif",
+                    "artist_name": "Bit Shifter",
+                    "album_id": "7869"
+                },
+                {
+                    "name": "Particle Charge",
+                    "track_url": "http://freemusicarchive.org/music/bit_shifter/Information_Chase/8bp059-04-bit_shifter-particle_charge",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/bitshifter_-_Information_Chase_-_2010112364108203.gif",
+                    "artist_name": "Bit Shifter",
+                    "album_id": "7869"
+                }
+            ]
+        },
+        {
+            "album_id": "14671",
+            "artist_name": "Kris Keyser",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/Kris_Keyser_-_Kris_Keyser_-_20130716144233374.png",
+            "name": "Kris Keyser",
+            "children": [
+                {
+                    "name": "Only",
+                    "track_url": "http://freemusicarchive.org/music/Kris_Keyser/Kris_Keyser/8bp130-05-kris_keyser-only",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_20130716151020346",
+                    "artist_name": "Kris Keyser",
+                    "album_id": "14671"
+                },
+                {
+                    "name": "Nitro",
+                    "track_url": "http://freemusicarchive.org/music/Kris_Keyser/Kris_Keyser/8bp130-06-kris_keyser-nitro",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_20130716143352030",
+                    "artist_name": "Kris Keyser",
+                    "album_id": "14671"
+                },
+                {
+                    "name": "Summoner",
+                    "track_url": "http://freemusicarchive.org/music/Kris_Keyser/Kris_Keyser/8bp130-03-kris_keyser-summoner",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_20130716151007285",
+                    "artist_name": "Kris Keyser",
+                    "album_id": "14671"
+                },
+                {
+                    "name": "OHC3",
+                    "track_url": "http://freemusicarchive.org/music/Kris_Keyser/Kris_Keyser/8bp130-04-kris_keyser-ohc3",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_20130716151013345",
+                    "artist_name": "Kris Keyser",
+                    "album_id": "14671"
+                },
+                {
+                    "name": "New Blood",
+                    "track_url": "http://freemusicarchive.org/music/Kris_Keyser/Kris_Keyser/8bp130-01-kris_keyser-new_blood",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_20130716143339287",
+                    "artist_name": "Kris Keyser",
+                    "album_id": "14671"
+                },
+                {
+                    "name": "Batsly Labs",
+                    "track_url": "http://freemusicarchive.org/music/Kris_Keyser/Kris_Keyser/8bp130-02-kris_keyser-batsly_labs",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_20130716143343334",
+                    "artist_name": "Kris Keyser",
+                    "album_id": "14671"
+                }
+            ]
+        },
+        {
+            "album_id": "4291",
+            "artist_name": "minusbaby",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/minusbaby_-_Left_-_2009113013148088.jpg",
+            "name": "Left",
+            "children": [
+                {
+                    "name": "Chilled Around for a Bit",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Left/Chilled_Around_for_a_Bit",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/minusbaby_-_03_-_Chilled_Around_for_a_Bit_-_2009113024222111.jpg",
+                    "artist_name": "minusbaby",
+                    "album_id": "4291"
+                },
+                {
+                    "name": "Something Happened When You Were Born",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Left/Something_Happened_When_You_Were_Born",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/minusbaby_-_01_-_Something_Happened_When_You_Were_Born_-_2009113043457269.jpg",
+                    "artist_name": "minusbaby",
+                    "album_id": "4291"
+                },
+                {
+                    "name": "A Few Years Later",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Left/A_Few_Years_Later",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/minusbaby_-_05_-_A_Few_Years_Later_-_2009113021733517.jpg",
+                    "artist_name": "minusbaby",
+                    "album_id": "4291"
+                },
+                {
+                    "name": "Left",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Left/Left",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/minusbaby_-_06_-_Left_-_2009113034154341.jpg",
+                    "artist_name": "minusbaby",
+                    "album_id": "4291"
+                },
+                {
+                    "name": "And Was Borne Unto My Brain",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Left/And_Was_Borne_Unto_My_Brain",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/minusbaby_-_04_-_And_Was_Borne_Unto_My_Brain_-_2009113022448944.jpg",
+                    "artist_name": "minusbaby",
+                    "album_id": "4291"
+                },
+                {
+                    "name": "A Large Part of Your Mind Sliced",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Left/A_Large_Part_of_Your_Mind_Sliced",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/minusbaby_-_02_-_A_Large_Part_of_Your_Mind_Sliced_-_2009113021758890.jpg",
+                    "artist_name": "minusbaby",
+                    "album_id": "4291"
+                }
+            ]
+        },
+        {
+            "album_id": "3503",
+            "artist_name": "gwEm",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/gwEm_-_Live_from_Hell_-_2009113012554898.png",
+            "name": "Live from Hell",
+            "children": [
+                {
+                    "name": "Golden Years Over",
+                    "track_url": "http://freemusicarchive.org/music/gwEm_and_Counter_Reset/Live_from_Hell/Golden_Years_Over",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/gwEm_and_Counter_Reset_-_07_-_Golden_Years_Over_-_2009113031702839.png",
+                    "artist_name": "gwEm and Counter Reset",
+                    "album_id": "3503"
+                },
+                {
+                    "name": "Radiation Hazard",
+                    "track_url": "http://freemusicarchive.org/music/gwEm_and_Counter_Reset/Live_from_Hell/Radiation_Hazard",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/gwEm_and_Counter_Reset_-_01_-_Radiation_Hazard_-_2009113041940551.png",
+                    "artist_name": "gwEm and Counter Reset",
+                    "album_id": "3503"
+                },
+                {
+                    "name": "Tubular Crusade",
+                    "track_url": "http://freemusicarchive.org/music/gwEm_and_Counter_Reset/Live_from_Hell/Tubular_Crusade",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/gwEm_and_Counter_Reset_-_03_-_Tubular_Crusade_-_2009113045939047.png",
+                    "artist_name": "gwEm and Counter Reset",
+                    "album_id": "3503"
+                },
+                {
+                    "name": "The Improbable Man",
+                    "track_url": "http://freemusicarchive.org/music/gwEm_and_Counter_Reset/Live_from_Hell/The_Improbable_Man",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/gwEm_and_Counter_Reset_-_02_-_The_Improbable_Man_-_2009113044804631.png",
+                    "artist_name": "gwEm and Counter Reset",
+                    "album_id": "3503"
+                },
+                {
+                    "name": "Different World",
+                    "track_url": "http://freemusicarchive.org/music/gwEm_and_Counter_Reset/Live_from_Hell/Different_World_1749",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/gwEm_and_Counter_Reset_-_04_-_Different_World_-_2009113025616690.png",
+                    "artist_name": "gwEm and Counter Reset",
+                    "album_id": "3503"
+                },
+                {
+                    "name": "Forever Ardcore",
+                    "track_url": "http://freemusicarchive.org/music/gwEm_and_Counter_Reset/Live_from_Hell/Forever_Ardcore",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/gwEm_and_Counter_Reset_-_06_-_Forever_Ardcore_-_2009113031144807.png",
+                    "artist_name": "gwEm and Counter Reset",
+                    "album_id": "3503"
+                },
+                {
+                    "name": "NuGabbaDisco",
+                    "track_url": "http://freemusicarchive.org/music/gwEm_and_Counter_Reset/Live_from_Hell/NuGabbaDisco",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/gwEm_and_Counter_Reset_-_05_-_NuGabbaDisco_-_2009113040514263.png",
+                    "artist_name": "gwEm and Counter Reset",
+                    "album_id": "3503"
+                }
+            ]
+        },
+        {
+            "album_id": "7553",
+            "artist_name": "Anamanaguchi",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/Anamanaguchi_-_Power_Supply_-_20101019101611181.gif",
+            "name": "Power Supply",
+            "children": [
+                {
+                    "name": "Helix Nebula",
+                    "track_url": "http://freemusicarchive.org/music/Anamanaguchi/Power_Supply/8bp065-02-anamanaguchi-helix_nebula",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Anamanaguchi_-_Power_Supply_-_20101019101611181.gif",
+                    "artist_name": "Anamanaguchi",
+                    "album_id": "7553"
+                },
+                {
+                    "name": "Sting Operation",
+                    "track_url": "http://freemusicarchive.org/music/Anamanaguchi/Power_Supply/8bp065-01-anamanaguchi-sting_operation",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Anamanaguchi_-_Power_Supply_-_20101019101611181.gif",
+                    "artist_name": "Anamanaguchi",
+                    "album_id": "7553"
+                },
+                {
+                    "name": "Video Challenge",
+                    "track_url": "http://freemusicarchive.org/music/Anamanaguchi/Power_Supply/8bp065-04-anamanaguchi-video_challenge",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Anamanaguchi_-_Power_Supply_-_20101019101611181.gif",
+                    "artist_name": "Anamanaguchi",
+                    "album_id": "7553"
+                },
+                {
+                    "name": "Fast Turtle",
+                    "track_url": "http://freemusicarchive.org/music/Anamanaguchi/Power_Supply/8bp065-05-anamanaguchi-fast_turtle",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Anamanaguchi_-_Power_Supply_-_20101019101611181.gif",
+                    "artist_name": "Anamanaguchi",
+                    "album_id": "7553"
+                },
+                {
+                    "name": "Power Supply",
+                    "track_url": "http://freemusicarchive.org/music/Anamanaguchi/Power_Supply/8bp065-07-anamanaguchi-power_supply",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Anamanaguchi_-_Power_Supply_-_20101019101611181.gif",
+                    "artist_name": "Anamanaguchi",
+                    "album_id": "7553"
+                },
+                {
+                    "name": "Airbase",
+                    "track_url": "http://freemusicarchive.org/music/Anamanaguchi/Power_Supply/8bp065-03-anamanaguchi-airbase",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Anamanaguchi_-_Power_Supply_-_20101019101611181.gif",
+                    "artist_name": "Anamanaguchi",
+                    "album_id": "7553"
+                },
+                {
+                    "name": "Flora/Fauna",
+                    "track_url": "http://freemusicarchive.org/music/Anamanaguchi/Power_Supply/8bp065-06-anamanaguchi-flora_fauna",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Anamanaguchi_-_Power_Supply_-_20101019101611181.gif",
+                    "artist_name": "Anamanaguchi",
+                    "album_id": "7553"
+                }
+            ]
+        },
+        {
+            "album_id": "2963",
+            "artist_name": "minusbaby",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/minusbaby_-_Saudade_for_Beginners_-_2009113013149537.png",
+            "name": "Saudade for Beginners",
+            "children": [
+                {
+                    "name": "São Roque (Bella/Boa)",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Saudade_for_Beginners/So_Roque_BellaBoa",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/minusbaby_-_Saudade_for_Beginners_-_2009113013149537.png",
+                    "artist_name": "minusbaby",
+                    "album_id": "2963"
+                },
+                {
+                    "name": "Minha Caipirinha É Ótima (Very, Very)",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Saudade_for_Beginners/Minha_Caipirinha__tima_Very_Very",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/minusbaby_-_Saudade_for_Beginners_-_2009113013149537.png",
+                    "artist_name": "minusbaby",
+                    "album_id": "2963"
+                },
+                {
+                    "name": "El Camino de Tu Casa a la Mía",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Saudade_for_Beginners/El_Camino_de_Tu_Casa_a_la_Ma",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/minusbaby_-_Saudade_for_Beginners_-_2009113013149537.png",
+                    "artist_name": "minusbaby",
+                    "album_id": "2963"
+                },
+                {
+                    "name": "Ela Chegou",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Saudade_for_Beginners/Ela_Chegou",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/minusbaby_-_Saudade_for_Beginners_-_2009113013149537.png",
+                    "artist_name": "minusbaby",
+                    "album_id": "2963"
+                },
+                {
+                    "name": "Comendo Pão e Fazendo Mal",
+                    "track_url": "http://freemusicarchive.org/music/minusbaby/Saudade_for_Beginners/Comendo_Po_e_Fazendo_Mal",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/minusbaby_-_Saudade_for_Beginners_-_2009113013149537.png",
+                    "artist_name": "minusbaby",
+                    "album_id": "2963"
+                }
+            ]
+        },
+        {
+            "album_id": "13276",
+            "artist_name": "Dorothy's Magic Bag",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/Dorothys_Magic_Bag_-_Viva_La_Revolution_-_20130109161941910.jpg",
+            "name": "Viva La Revolution!",
+            "children": [
+                {
+                    "name": "Science Fiction Man",
+                    "track_url": "http://freemusicarchive.org/music/Dorothys_Magic_Bag/Viva_La_Revolution/8bp063-02-dorothys_magic_bag-science_fiction_man",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Dorothys_Magic_Bag_-_Viva_La_Revolution_-_20130109161941910.jpg",
+                    "artist_name": "Dorothy's Magic Bag",
+                    "album_id": "13276"
+                },
+                {
+                    "name": "Rondo alla Turka",
+                    "track_url": "http://freemusicarchive.org/music/Dorothys_Magic_Bag/Viva_La_Revolution/8bp063-07-dorothys_magic_bag-rondo_alla_turka",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Dorothys_Magic_Bag_-_Viva_La_Revolution_-_20130109161941910.jpg",
+                    "artist_name": "Dorothy's Magic Bag",
+                    "album_id": "13276"
+                },
+                {
+                    "name": "Skaldjursakuten",
+                    "track_url": "http://freemusicarchive.org/music/Dorothys_Magic_Bag/Viva_La_Revolution/8bp063-06-dorothys_magic_bag-skaldjursakuten",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Dorothys_Magic_Bag_-_Viva_La_Revolution_-_20130109161941910.jpg",
+                    "artist_name": "Dorothy's Magic Bag",
+                    "album_id": "13276"
+                },
+                {
+                    "name": "A Meeting with Death in Person",
+                    "track_url": "http://freemusicarchive.org/music/Dorothys_Magic_Bag/Viva_La_Revolution/8bp063-01-dorothys_magic_bag-a_meeting_with_death_in_person",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Dorothys_Magic_Bag_-_Viva_La_Revolution_-_20130109161941910.jpg",
+                    "artist_name": "Dorothy's Magic Bag",
+                    "album_id": "13276"
+                },
+                {
+                    "name": "Santa Inc.",
+                    "track_url": "http://freemusicarchive.org/music/Dorothys_Magic_Bag/Viva_La_Revolution/8bp063-03-dorothys_magic_bag-santa_inc",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Dorothys_Magic_Bag_-_Viva_La_Revolution_-_20130109161941910.jpg",
+                    "artist_name": "Dorothy's Magic Bag",
+                    "album_id": "13276"
+                },
+                {
+                    "name": "Stuck in Cue",
+                    "track_url": "http://freemusicarchive.org/music/Dorothys_Magic_Bag/Viva_La_Revolution/8bp063-04-dorothys_magic_bag-stuck_in_cue",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Dorothys_Magic_Bag_-_Viva_La_Revolution_-_20130109161941910.jpg",
+                    "artist_name": "Dorothy's Magic Bag",
+                    "album_id": "13276"
+                },
+                {
+                    "name": "Märgspik",
+                    "track_url": "http://freemusicarchive.org/music/Dorothys_Magic_Bag/Viva_La_Revolution/8bp063-05-dorothys_magic_bag-margspik",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/Dorothys_Magic_Bag_-_Viva_La_Revolution_-_20130109161941910.jpg",
+                    "artist_name": "Dorothy's Magic Bag",
+                    "album_id": "13276"
+                }
+            ]
+        },
+        {
+            "album_id": "8692",
+            "artist_name": "Cheapshot",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/Cheapshot_-_zOMG_-_2011030173223088.gif",
+            "name": "zOMG!!",
+            "children": [
+                {
+                    "name": "Skeptic",
+                    "track_url": "http://freemusicarchive.org/music/Cheapshot/zOMG/8bp115-05-cheapshot-skeptic",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_2011030172542907",
+                    "artist_name": "Cheapshot",
+                    "album_id": "8692"
+                },
+                {
+                    "name": "Shudder",
+                    "track_url": "http://freemusicarchive.org/music/Cheapshot/zOMG/8bp115-04-cheapshot-shudder",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_2011030172536787",
+                    "artist_name": "Cheapshot",
+                    "album_id": "8692"
+                },
+                {
+                    "name": "Chigu",
+                    "track_url": "http://freemusicarchive.org/music/Cheapshot/zOMG/8bp115-01-cheapshot-chigu",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_2011030172517289",
+                    "artist_name": "Cheapshot",
+                    "album_id": "8692"
+                },
+                {
+                    "name": "Roopy",
+                    "track_url": "http://freemusicarchive.org/music/Cheapshot/zOMG/8bp115-03-cheapshot-roopy",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_2011030172530132",
+                    "artist_name": "Cheapshot",
+                    "album_id": "8692"
+                },
+                {
+                    "name": "Ieyasu",
+                    "track_url": "http://freemusicarchive.org/music/Cheapshot/zOMG/8bp115-02-cheapshot-ieyasu",
+                    "track_image_file": "https://freemusicarchive.org/file/images/children/Track_-_2011030172524982",
+                    "artist_name": "Cheapshot",
+                    "album_id": "8692"
+                }
+            ]
+        },
+        {
+            "album_id": "4030",
+            "artist_name": "AY Riders",
+            "album_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+            "name": "ZX Spectrum is Alive",
+            "children": [
+                {
+                    "name": "Axel Funk",
+                    "track_url": "http://freemusicarchive.org/music/Factor6/ZX_Spectrum_is_Alive/Axel_Funk",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "Factor6",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Bits - Intro",
+                    "track_url": "http://freemusicarchive.org/music/Factor6/ZX_Spectrum_is_Alive/Bits_-_Intro",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "Factor6",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Cub",
+                    "track_url": "http://freemusicarchive.org/music/Yerzmyey/ZX_Spectrum_is_Alive/Cub",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "Yerzmyey",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Fearzone",
+                    "track_url": "http://freemusicarchive.org/music/Factor6/ZX_Spectrum_is_Alive/Fearzone",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "Factor6",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Cloud 9",
+                    "track_url": "http://freemusicarchive.org/music/Factor6/ZX_Spectrum_is_Alive/Cloud_9",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "Factor6",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Gianna",
+                    "track_url": "http://freemusicarchive.org/music/Factor6/ZX_Spectrum_is_Alive/Gianna",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "Factor6",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Norwegian Blue",
+                    "track_url": "http://freemusicarchive.org/music/Gasman/ZX_Spectrum_is_Alive/Norwegian_Blue",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "Gasman",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Flimbo's Quest 1",
+                    "track_url": "http://freemusicarchive.org/music/Factor6/ZX_Spectrum_is_Alive/Flimbos_Quest_1",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "Factor6",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Humbuk",
+                    "track_url": "http://freemusicarchive.org/music/X-agon/ZX_Spectrum_is_Alive/Humbuk",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "X-agon",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Lamerina",
+                    "track_url": "http://freemusicarchive.org/music/X-agon/ZX_Spectrum_is_Alive/Lamerina",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "X-agon",
+                    "album_id": "4030"
+                },
+                {
+                    "name": "Follinoxe",
+                    "track_url": "http://freemusicarchive.org/music/Factor6/ZX_Spectrum_is_Alive/Follinoxe",
+                    "track_image_file": "https://freemusicarchive.org/file/images/albums/AY_Riders_-_ZX_Spectrum_is_Alive_-_2009113011913786.png",
+                    "artist_name": "Factor6",
+                    "album_id": "4030"
+                }
+            ]
+        }
+    ]
+}
