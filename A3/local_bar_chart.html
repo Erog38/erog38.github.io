@@ -7,8 +7,8 @@
             Bar Chart
         </h1>
         <p> 
-        This is a simple bar chart showing how many times select words 
-        showed up in a random text.
+        This is a simple bar chart showing population for a selection of 
+        Los Angeles zip codes.
         </p>
         <script>
     var margin = {top: 20, right: 30, bottom: 40, left: 30},
@@ -22,33 +22,31 @@
     var g = svg.append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.tsv("words.txt").then(function(dat){
+d3.csv("/A3/2010_Census_Populations_by_Zip_Code.csv").then(function(dat){
     
-    var data = dat.splice(11,12);
-    data.shift()
-    console.log(data);
+    var data = dat.splice(10,11);
     var y = d3.scaleLinear()
-        .domain([0, d3.max(data.map(d => +d.frequency))]).nice()
+        .domain([0, d3.max(data.map(d => +d["Total Population"]))]).nice()
         .range([height-margin.bottom,margin.top]);
     var x = d3.scaleBand()
-        .domain(data.map(d => d.word))
+        .domain(data.map(d => d["Zip Code"]))
         .range([0+margin.left,width])
         .padding(0.1);
 
-    console.log(y);
+    console.log(x.bandwidth());
 
     const bar = g.attr("fill", "green")
         .selectAll("rect")
         .data(data).enter()
         .append("rect")
-        .attr("x", d => x(d.word))
+        .attr("x", d => x(d["Zip Code"]))
         .attr("width", x.bandwidth())
-        .attr("y", d => y(+d.frequency)+margin.bottom)
-        .attr("height", d => y(0) - y(+d.frequency))
+        .attr("y", d => y(+d["Total Population"])+margin.bottom)
+        .attr("height", d => y(0) - y(+d["Total Population"]))
         
     const label = g.selectAll("text").data(data).enter()
-        .append("text").text(d => d.word)
-        .attr("x", d => x(d.word) + x.bandwidth()/2)
+        .append("text").text(d => d["Zip Code"])
+        .attr("x", d => x(d["Zip Code"]) + x.bandwidth()/2)
         .attr("y",  height+15)
         .attr("text-anchor", "left")
         .attr("text-anchor", "middle")
@@ -62,7 +60,7 @@ d3.tsv("words.txt").then(function(dat){
         .attr("x", 4)
         .attr("text-anchor", "start")
         .attr("font-weight", "bold")
-        .text("Occurances"))
+        .text("Population"))
 
     xAxis = g => g
     .attr("transform", `translate(0,${height - margin.bottom})`)
@@ -72,7 +70,7 @@ d3.tsv("words.txt").then(function(dat){
         .attr("fill", "#000")
         .attr("font-weight", "bold")
         .attr("text-anchor", "middle")
-        .text("Word"))
+        .text("Zip Code"))
 
     g.append("g").call(function(g){
         g.call(yAxis);

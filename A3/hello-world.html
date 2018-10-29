@@ -14,7 +14,7 @@
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var data = d3.tsv("words.txt").then(function(data){
+var data = d3.tsv("/A3/words.txt").then(function(data){
 
     var svg = d3.select("body").append("svg")
         .attr("width", width + margin.left + margin.right)

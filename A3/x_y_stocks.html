@@ -21,7 +21,7 @@
     var g = svg.append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var data = d3.csv("stocktable.csv").then(data => {
+var data = d3.csv("/A3/stocktable.csv").then(data => {
     console.log(data);
     var y = d3.scaleLinear()
         .domain([0, d3.max(data.map(d => +d["Close"]))]).nice()

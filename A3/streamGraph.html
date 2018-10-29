@@ -26,7 +26,7 @@
 
 
 
-d3.tsv("words.txt",d => ({"word":d.word,"frequency":+d.frequency})).then(datum => {
+d3.tsv("/A3/words.txt",d => ({"word":d.word,"frequency":+d.frequency})).then(datum => {
     var then = Date.now()
 
     var m = Object.values(datum).filter(d=>d.frequency)

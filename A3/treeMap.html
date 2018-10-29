@@ -52,7 +52,7 @@ var treeMapLayout = d3.treemap()
     .round(true)
     .paddingTop(margin.top);
 
-d3.json("treedir.json").then(data => {
+d3.json("/A3/treedir.json").then(data => {
 
     var root = d3.hierarchy(data)
     .sort(function(a, b) { return b.height - a.height || b.value - a.value; });;

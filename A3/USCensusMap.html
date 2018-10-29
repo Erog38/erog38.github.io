@@ -44,7 +44,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", 500);
 
 
-    d3.json("us.json").then(function(us) {
+    d3.json("/A3/us.json").then(function(us) {
 
   nsvg.append("path")
       .datum(topojson.feature(us, us.objects.land))

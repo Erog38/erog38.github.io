@@ -49,7 +49,7 @@ var selectSong = function(d,i) {
     }
 }
 
-d3.json("albumList.json").then(data => {
+d3.json("/A4/albumList.json").then(data => {
 
     var root = tree(d3.hierarchy(data));
 

@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="http://d3js.org/topojson.v1.min.js"></script>
+    </head>
+<style>
+
+.link {
+    fill: none;
+    stroke: #555;
+    stroke-opacity: 0.4;
+    stroke-width: 0.5px;
+}
+
+.loading {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+svg {
+    border: 1px solid black;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.water {
+  fill: #444;
+}
+
+.land {
+  stroke: #FFF;
+  stroke-width: 0.7px;
+}
+
+.land:hover {
+  stroke-width: 1px;
+}
+
+.focused {
+}
+
+select {
+  position: absolute;
+  top: 20px;
+  left: 580px;
+  border: solid #ccc 1px;
+  padding: 3px;
+  box-shadow: inset 1px 1px 2px #ddd8dc;
+}
+
+</style>
+<body>
+    <h1>
+        Steam Bandwidth Stats by Country for the last 7 days
+    </h1>
+    <svg id="globe">
+    </svg>
+    <table>
+            <tr>
+                <td>Country:</td>
+                <td id="country_name"></td>
+            </tr>
+            <tr>
+                <td>Total Bytes Transferred:</td>
+                <td id="total_bytes"></td>
+            </tr>
+            <tr>
+                <td>Average Mb/s:</td>
+                <td id="average_mbps"></td>
+            </tr>
+        </table>
+    <svg id="map">
+    </svg>
+    <script src="globe.js"></script>
+</body>
+</html>
+

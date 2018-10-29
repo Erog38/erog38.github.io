@@ -52,7 +52,7 @@ var tree = d3.tree()
     .size([360, height/2])
     .separation(function(a, b) { return (a.parent == b.parent ? 5 : 10) / a.depth; });
 
-d3.json("treedir.json").then(data => {
+d3.json("/A3/treedir.json").then(data => {
 
     var root = tree(d3.hierarchy(data));
 
