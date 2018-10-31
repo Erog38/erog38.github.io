@@ -3,17 +3,15 @@ var width = 900
 var height = 450;
 
 //data globals
-var tempData = {};
+var steamData = {};
 var world;
 
 //simple data syncronization booleans.
-var tempDataDone = false;
+var steamDataRecieved = false;
 var worldDataDone = false;
 
 //This is how steam transfers public stats. jsonp seems like a wonderful
 //and terrible idea.
-//Their world map is more complete and up to date than many others from what
-//I found testing vis.philgore.net/A5/steam.html so I kept it.
 jsonpFetch = function (url, func, callback) {
     function create() {
         jsonpFetch[func] = function(data) {
@@ -31,25 +29,26 @@ jsonpFetch = function (url, func, callback) {
         .attr('src', url );
 };
 
-jsonpFetch("https://steamstore-a.akamaihd.net/public/data/world-countries.jsonp", "onWorldCountries", wD => {
-    world = wD;
-    worldDataDone = true;
-    if (tempDataDone){
-        ready();
-    }
-});
+today = new Date();
+jsonpFetch( "https://steamcdn-a.akamaihd.net/steam/publicstats/download_traffic_per_country.jsonp?v="+today.getMonth()+"-"+today.getDay()+"-"+today.getFullYear()+"-19", "onTrafficData", d => {
 
-d3.csv("/temps.csv").then( data => {
-    tempData = data.reduce((map,d) => {map[d.id]=d;return map},{});
-    console.log(tempData);
-    tempDataDone = true
+    steamData = d;
+    steamDataRecieved = true;
     if (worldDataDone){
         ready();
     }
 });
 
+jsonpFetch("https://steamstore-a.akamaihd.net/public/data/world-countries.jsonp", "onWorldCountries", wD => {
+    world = wD;
+    worldDataDone = true;
+    if (steamDataRecieved){
+        ready();
+    }
+});
+
 var globeSVG = d3.select("#globe")
-    .attr("width", width/2 + margin.left + margin.right)
+    .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom);
 
 var mapSVG = d3.select("#map")
@@ -57,20 +56,33 @@ var mapSVG = d3.select("#map")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom);
 
+var blackGreenPalette =
+    {
+        highlight: "#89adba",
+        gradient:[
+            '#222222',
+            '#343926',
+            '#46502a',
+            '#58672f',
+            '#6B7e33',
+            '#7d9537',
+            '#8fac3c',
+            '#a1c340',
+            '#b4da45' ]
+    };
+
 var sens = 0.5;
-var scl = height/2;
+var scl = Math.min(width, height)/2.5;
 
 //Setting globe projection
 var globeProjection = d3.geoOrthographic()
     .fitExtent([[1, 1], [width - 1, height - 1]], {type:"Sphere"})
     .rotate([0, 0])
-    .translate([(width / 4)+margin.left, (height / 2)+margin.top])
+    .translate([(width / 2)+margin.left, (height / 2)+margin.top])
     .scale(scl);
 
 var mapProjection = d3.geoEquirectangular()
     .translate([(width / 2)+margin.left, (height / 2)+margin.top])
-
-
 
 var mapPath = d3.geoPath(mapProjection);
 var globePath = d3.geoPath(globeProjection)
@@ -91,53 +103,30 @@ globeSVG.append("path")
     .attr("class", "water")
     .attr("d", globePath);
 
-//var quantize= d3.scaleQuantize()
-var blueRedPalette =
-    {
-        highlight: "#fff",
-        gradient:[
-"#021893",
-"#1b2f9d",
-"#3446a8",
-"#4d5db3",
-"#6774be",
-"#c1697b",
-"#b75065",
-"#ad374e",
-"#a31e38",
-"#990623"
-        ]
-    };
+var quantize= d3.scaleQuantize()
 
-
-var color = d3.scaleQuantize()
-    .range(blueRedPalette["gradient"])
-    .domain([0,35]);
-
-var transitionLocation = 0
-var trans = d3.transition()
-    .duration(1000)
-    .delay(1000);
-
-var globe;
-var map;
 function buildGlobe() {
+
 
     countries = world.features;
     //Drawing countries on the globe
-    globe = globeSVG.selectAll("path.land")
+    var globe = globeSVG.selectAll("path.land")
         .data(countries)
         .enter().append("path")
         .attr("class", "land")
         .attr("d", globePath)
+        .style( "fill", d => {
+            if (steamData[d.id]){
+                return quantize(Math.sqrt(+steamData[d.id]["totalbytes"]))
+            } else
+                return "#000";
+        })
         .style('stroke', 'white')
         .style('stroke-width', 0.3)
         .on('mouseover',hover)
         .on("mouseover", hover)
         .on("mouseout", unhover)
-        .on("click", selectCountry)
-
-
+        .on("click", selectCountry);
     //Drag event
     globeSVG.call(d3.drag()
         .subject(() => {
@@ -153,43 +142,42 @@ function buildGlobe() {
 }
 function hover(d, i) {
     var cur = d3.select(this);
-    cur.style("stroke", "black")
-       .style('stroke-width', 2)
+    var previousColor = cur.style("fill");
+    cur.attr("prevcolor", previousColor )
+        .style( "fill", blackGreenPalette['highlight'] )
 }
 function unhover(d, i) {
     var cur = d3.select(this);
-    cur.style("stroke", "white")
-       .style('stroke-width', 0.3)
+    cur.style( "fill", cur.attr("prevcolor") );
+
 }
-selectedCountry = {};
-function selectCountry(d) {
-    console.log(d);
-    if(d.id != null){
-        selectedCountry = d;
-        var name = d3.select("#country_name");
-        var temperature = d3.select("#annual_mean_temp");
-        name.node().innerHTML = d.properties.name;
-        if (tempData[d.id]){
-            temperature.node().innerHTML = +tempData[d.id][transitionLocation]+"° C";
-        } else {
-            temperature.node().innerHTML = "No Data";
-        }
+function selectCountry(d, i) {
+    var name = d3.select("#country_name");
+    var bytesTransferred = d3.select("#average_mbps");
+    var totalBytes = d3.select("#total_bytes");
+    name.node().innerHTML = d.properties.name;
+    if (steamData[d.id]){
+        bytesTransferred.node().innerHTML = d3.format(".4s")(+steamData[d.id]["avgmbps"])+"bps";
+        totalBytes.node().innerHTML = d3.format(".4s")(+steamData[d.id]["totalbytes"])+"B";
+    } else {
+        bytesTransferred.node().innerHTML = "No Data";
+        totalBytes.node().innerHTML = "No Data";
     }
-}
-const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-];
-function setMonth(index) {
-    d3.select("#month").node().innerHTML = monthNames[index-1];
 }
 
 function buildMap(){
-    map = mapSVG.append("g")
+    mapSVG.append("g")
         .attr("class", "countries")
         .selectAll("path")
         .data(world.features)
         .enter().append("path")
         .attr("d", mapPath)
+        .style( "fill", d => {
+            if (steamData[d.id]){
+                return quantize(Math.sqrt(+steamData[d.id]["totalbytes"]))
+            } else
+                return "#000";
+        })
         .style('stroke', 'white')
         .style('stroke-width', 0.3)
         .on('mouseover',hover)
@@ -197,32 +185,13 @@ function buildMap(){
         .on('click', selectCountry);
 }
 
-function repeatTransition() {
-    transitionLocation = (transitionLocation % 12)+1
-    lock = {};
-    d3.select(lock).transition().delay(1000).ease(d3.easeLinear).duration(1000).call(() => {
-        setMonth(transitionLocation);
-        globe.transition().ease(d3.easeLinear).duration(300).style( "fill", (d,i) => {
-            if (tempData[d.id]){
-                return color(+tempData[d.id][transitionLocation])
-            } else
-                return "#000";
-        })
-        map.transition().ease(d3.easeLinear).duration(300).style( "fill", (d,i) => {
-            if (tempData[d.id]){
-                return color(+tempData[d.id][transitionLocation])
-            } else
-                return "#000";
-        })
-        selectCountry(selectedCountry);
-    }).on("end",repeatTransition);
-}
-
 //Main function
 function ready() {
-    color.domain([-10,50]);
+    quantize.range(blackGreenPalette['gradient'])
+        .domain([
+            d3.min( d3.values(steamData), d=> Math.sqrt(+d['totalbytes'])),
+            d3.max( d3.values(steamData), d=> Math.sqrt(+d['totalbytes']))
+        ]);
     buildGlobe();
     buildMap();
-    repeatTransition()
 };
-

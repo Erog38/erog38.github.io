@@ -3,7 +3,7 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="http://d3js.org/topojson.v1.min.js"></script>
     </head>
-<style>
+    <style>
 
 .link {
     fill: none;
@@ -28,6 +28,10 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.globe_container {
+    display:flex;
+    flex-direction:row;
+}
 .row {
     display: flex;
     flex-direction: row;
@@ -35,54 +39,66 @@ body {
 }
 
 .water {
-  fill: #444;
+    fill: #444;
 }
 
-.land {
-  stroke: #FFF;
-  stroke-width: 0.7px;
+
+
+table {
+    width:350px;
+    position:fixed;
+    left: 0;
+    padding: 10;
+    top: 25%;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    border: solid 2px black;
+    border-radius: 10px;
 }
 
-.land:hover {
-  stroke-width: 1px;
+@media only screen and (max-width: 1200px) {
+    table {
+        position:initial;
+    }
 }
 
-.focused {
+.data_column {
+    text-align: end;
+}
+.country_row {
+    height: 50px;
+}
+.table_label {
+    width:150px;
 }
 
-select {
-  position: absolute;
-  top: 20px;
-  left: 580px;
-  border: solid #ccc 1px;
-  padding: 3px;
-  box-shadow: inset 1px 1px 2px #ddd8dc;
-}
 
-</style>
-<body>
-    <h1>
-        Steam Bandwidth Stats by Country for the last 7 days
-    </h1>
-    <svg id="globe">
-    </svg>
-    <table>
-            <tr>
-                <td>Country:</td>
-                <td id="country_name"></td>
-            </tr>
-            <tr>
-                <td>Total Bytes Transferred:</td>
-                <td id="total_bytes"></td>
-            </tr>
-            <tr>
-                <td>Average Mb/s:</td>
-                <td id="average_mbps"></td>
-            </tr>
-        </table>
-    <svg id="map">
-    </svg>
-    <script src="globe.js"></script>
-</body>
+    </style>
+    <body>
+        <h1>
+            Average Temperature by Country
+        </h1>
+        <div class="globe_container">
+            <svg id="globe">
+            </svg>
+        </div>
+            <table>
+                <tr class="country_row" >
+                    <td class="table_label">Country: </td>
+                    <td id="country_name" class="data_column"></td>
+                </tr>
+                <tr>
+                    <td class="table_label">Mean Temperature: </td>
+                    <td id="annual_mean_temp" class="data_column"></td>
+                </tr>
+                <tr>
+                    <td class="table_label">Month: </td>
+                    <td id="month" class="data_column">
+                    </td>
+                </tr>
+            </table>
+        <svg id="map">
+        </svg>
+        <script src="globe.js"></script>
+    </body>
 </html>
-
