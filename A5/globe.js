@@ -39,7 +39,7 @@ jsonpFetch("https://steamstore-a.akamaihd.net/public/data/world-countries.jsonp"
     }
 });
 
-d3.csv("/temps.csv").then( data => {
+d3.csv("/A5/temps.csv").then( data => {
     tempData = data.reduce((map,d) => {map[d.id]=d;return map},{});
     console.log(tempData);
     tempDataDone = true
